@@ -31,7 +31,7 @@ What do you think has happened to result in the container status you see? To con
 `docker logs app`
 
 6.	Remove the failed WordPress container. We will deploy it in an improved configuration in the next step.  
-`docker stop && docker rm app`
+`docker stop app && docker rm app`
 
 7.	Redeploy WordPress, this time with a link defined to the MySQL container:  
 `docker run -d --name app -e WORDPRESS_DB_HOST=db:3306 --link db:mysql -p 80:80 -e WORDPRESS_DB_HOST=db:3306 -e WORDPRESS_DB_PASSWORD=password s5atrain/wordpress:latest`
