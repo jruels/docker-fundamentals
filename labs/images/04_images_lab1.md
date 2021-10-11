@@ -44,7 +44,7 @@ The .pem file will be provided by the instructor for this lab. This command will
 
 
 3.	In the command line, enter the following command to deploy the WordPress All-In-One container. In the following steps, this WordPress all-in-one will receive a WordPress tool called the "WordPress CLI." This tools allows WordPress administrators to interact with their WordPress deployment using the command-line.  
-    `docker run -d -P --name wpaio s5atrain/wordpress:aio`  
+    `docker run -d -P --name wpaio shaunassam/wpaio-ubuntu1804`  
 The last line of output will be a container ID.  
 
 4.	Run the following command to validate that WordPress CLI is not installed.  
@@ -73,12 +73,15 @@ Two ports will be listed as the output:
     `docker exec -it wpaio /bin/bash`
 
 9.	Once inside the WordPress container, enter the following commands in following sequence to install the WordPress CLI tool.  
-    `apt-get update`  
-    `apt-get install wget –y`  
-    `wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar`  
-    `mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp`  
-    `cd /var/www/html`  
-    `wp theme list --allow-root`  
+```sh
+    apt-get update  
+    apt-get install -y wget
+    wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar  
+    mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp  
+    cd /var/www/html  
+    wp theme list --allow-root  
+```
+
 The command line will return the following output and validate that the WordPress CLI has been installed on the running container.  
     ```
     No value for $TERM and no -T specified   
