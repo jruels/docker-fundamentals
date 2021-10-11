@@ -15,8 +15,8 @@ Lab 1: [Images](labs/images/)
 Lab 2: [Networking](labs/networking/)   
 Lab 3: [Optimizing Dockerfiles](labs/adv-dockerfile/)    
 
-### Day 2
-Lab 4: [Volumes](labs/volumes)
-Lab 5: [Compose](labs/compose)
-Lab 6: [Compose](labs/swarm)
-Lab 7: [Capstone](labs/orchestration)
+### Day 2   
+Lab 4: [Volumes](labs/volumes)   
+Lab 5: [Compose](labs/compose)   
+Lab 6: [Swarm](labs/orchestration)   
+Lab 7: [Capstone](labs/capstone)   

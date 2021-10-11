@@ -1,0 +1,7 @@
+version: '2'
+
+services:
+
+  hello-world:
+    image: hello-world
+

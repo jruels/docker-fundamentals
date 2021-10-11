@@ -1,0 +1,34 @@
+version: '2'
+
+services:
+  mariadb:
+    image: 'bitnami/mariadb:latest'
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - mariadb_data:/bitnami/mariadb
+  wordpress:
+    image: bitnami/wordpress:latest
+    depends_on:
+      - mariadb
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+      - MYSQL_CLIENT_CREATE_DATABASE_NAME=bitnami_wordpress
+      - MYSQL_CLIENT_CREATE_DATABASE_USER=bn_wordpress
+    ports:
+      - '80:80'
+      - '443:443'
+    volumes:
+      - wordpress_data:/bitnami/wordpress
+      - apache_data:/bitnami/apache
+      - php_data:/bitnami/php
+
+volumes:
+  mariadb_data:
+    driver: local
+  wordpress_data:
+    driver: local
+  apache_data:
+    driver: local
+  php_data:
+    driver: local
