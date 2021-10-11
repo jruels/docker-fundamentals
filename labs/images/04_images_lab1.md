@@ -83,7 +83,8 @@ Two ports will be listed as the output:
 ```
 
 The command line will return the following output and validate that the WordPress CLI has been installed on the running container.  
-    ```
+    
+```
     No value for $TERM and no -T specified   
     
     +----------------+----------+-----------+---------+
@@ -96,7 +97,7 @@ The command line will return the following output and validate that the WordPres
     | twentythirteen | inactive | available | 1.8     |
     | twentytwelve   | inactive | available | 1.9     |
     +----------------+----------+-----------+---------+
-    ```
+```
 
 10.	Now exit the WordPress container:  
     `exit`
