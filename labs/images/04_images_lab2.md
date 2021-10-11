@@ -31,7 +31,7 @@ You can switch to Insert Text mode with the 'i' command. Edit the file contents 
 *Note:  if you construct the file with cut&paste (not recommended), work on one line at a time to avoid artifacts.* 
 
 ```
-    FROM s5atrain/wordpress:aio  
+    FROM shaunassam/wpaio-ubuntu1804  
     LABEL activity="wp-cli-install"  
     
     RUN apt-get update &&\  
