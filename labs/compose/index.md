@@ -23,7 +23,7 @@ The .pem file will be provided by the instructor for this lab. This command will
 
 3.	Log into the Docker host and run the following:  
 Download the lab files   
-`wget http://bit.ly/docker-compose-lab -O docker-compose.zip`  
+`wget https://www.dropbox.com/s/rtq37vo126mjppj/compose.zip?dl=0 -O docker-compose.zip`  
 Extract the lab files   
 `sudo apt-get update && sudo apt-get install -y unzip`  
 `unzip docker-compose.zip`   
@@ -160,7 +160,7 @@ This may take a few minutes to pull the full WordPress deployment.
 5.	Verify that the containers are running:  
 `docker-compose ps`
 
-6.	Navigate to {% raw %}`http://<MASTER_IP>/wp-admin`{% endraw %} in the web browser.  
+6.	Navigate to {% raw %}`http://<MASTER_IP:8080>`{% endraw %} in the web browser.  
 
 7.	Log in to WordPress with the following credentials:  
 
@@ -173,7 +173,7 @@ This may take a few minutes to pull the full WordPress deployment.
 
 10.	Make any changes to the post on this page and click Update when finished.
 
-11.	Navigate to {% raw %} `http://<MASTER_IP>` {% endraw %} in another web browser tab. The page that loads should be the WordPress blog with the updated post.
+11.	Navigate to {% raw %} `http://<MASTER_IP:8080>` {% endraw %} in another web browser tab. The page that loads should be the WordPress blog with the updated post.
 
 12.	Now, find the ID of the WordPress application container and make a note of it. Stop and remove the container. Confirm that the WordPress site is no longer available.
 
