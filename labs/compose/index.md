@@ -23,7 +23,7 @@ The .pem file will be provided by the instructor for this lab. This command will
 
 3.	Log into the Docker host and run the following:  
 Download the lab files   
-`wget https://www.dropbox.com/s/rtq37vo126mjppj/compose.zip?dl=0 -O docker-compose.zip`  
+`wget https://www.dropbox.com/s/rtq37vo126mjppj/compose.zip?dl=1 -O docker-compose.zip`  
 Extract the lab files   
 `sudo apt-get update && sudo apt-get install -y unzip`  
 `unzip docker-compose.zip`   
