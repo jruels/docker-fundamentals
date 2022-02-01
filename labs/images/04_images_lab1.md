@@ -1,4 +1,3 @@
-# LAB
 ## Docker Images Part 1
 *Lab Objectives*
 
@@ -24,7 +23,7 @@ Step by Step Guide
 
 6.	Search for nginx and select one of the repositories to see more details.
 
-7.	Select the Dockerfile tab to view the Dockerfile for this build.
+7.	Look on the page for a link to the repo. Open this and review the Dockerfile.
 
 8.	This is where the information about the base image and repository maintainer is located, as well as the build code.
 
@@ -33,28 +32,18 @@ docker search wordpress. This will list all of the repositories within Docker Hu
 
 ### 2. Deploy WordPress All-In-One and the WordPress CLI
 Step by Step Guide
-1.	Locate the IP address of the Master machine within the lab folder.
-
-2.	If on a Mac, or using Linux:
-In a command line, enter  
-`ssh -i </Users/…/>docker.pem ubuntu@<IP>`  
-The .pem file will be provided by the instructor for this lab. This command will connect the console to the Docker machine.
-
-*If using Windows: Open Putty and connect to the session you saved earlier*
-
-
-3.	In the command line, enter the following command to deploy the WordPress All-In-One container. In the following steps, this WordPress all-in-one will receive a WordPress tool called the "WordPress CLI." This tools allows WordPress administrators to interact with their WordPress deployment using the command-line.  
+1.	In the command line, enter the following command to deploy the WordPress All-In-One container. In the following steps, this WordPress all-in-one will receive a WordPress tool called the "WordPress CLI." This tools allows WordPress administrators to interact with their WordPress deployment using the command-line.  
     `docker run -d -P --name wpaio shaunassam/wpaio-ubuntu1804`  
 The last line of output will be a container ID.  
 
-4.	Run the following command to validate that WordPress CLI is not installed.  
+2.	Run the following command to validate that WordPress CLI is not installed.  
     `docker exec wpaio wp theme list --allow-root --path='/var/www/html'`  
 The output will contain an error message. This is because the WordPress CLI is not yet installed.  
     ```
     OCI runtime exec failed: exec failed: container_linux.go:348: starting container process caused "exec: \"wp\": executable file not found in $PATH": unknown
     ```
 
-5.	Run the docker port command to get the mapped ports of the WordPress all-in-one container.  
+3.	Run the docker port command to get the mapped ports of the WordPress all-in-one container.  
     `docker port wpaio `  
 Two ports will be listed as the output:  
     ```
@@ -62,7 +51,7 @@ Two ports will be listed as the output:
     80/tcp -> 0.0.0.0:32770  
     ```
 
-6.	In a web browser, navigate to http://`<IP_Address>`:port using the local host IP address of your machine and the port mapped to 80/tcp from the previous step (i.e. 32770).
+4.	In a web browser, navigate to http://`<IP_Address>`:port using the local host IP address of your machine and the port mapped to 80/tcp from the previous step (i.e. 32770).
 
 7.	Configure WordPress with the following credentials:  
     `Username: root`  
@@ -73,18 +62,16 @@ Two ports will be listed as the output:
     `docker exec -it wpaio /bin/bash`
 
 9.	Once inside the WordPress container, enter the following commands in following sequence to install the WordPress CLI tool.  
-```sh
-    apt-get update  
+    ```sh
+    apt-get update
     apt-get install -y wget
-    wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar  
-    mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp  
-    cd /var/www/html  
-    wp theme list --allow-root  
-```
-
+    wget https://raw.githubusercontent.com/wp-cli/builds/gh-pages/phar/wp-cli.phar
+    mv wp-cli.phar /usr/local/bin/wp && chmod +x /usr/local/bin/wp
+    cd /var/www/html
+    wp theme list --allow-root
+    ```
 The command line will return the following output and validate that the WordPress CLI has been installed on the running container.  
-    
-```
+    ```
     No value for $TERM and no -T specified   
     
     +----------------+----------+-----------+---------+
@@ -97,7 +84,7 @@ The command line will return the following output and validate that the WordPres
     | twentythirteen | inactive | available | 1.8     |
     | twentytwelve   | inactive | available | 1.9     |
     +----------------+----------+-----------+---------+
-```
+    ```
 
 10.	Now exit the WordPress container:  
     `exit`
@@ -126,7 +113,7 @@ The output will be a new image ID.
     `docker login`  
 You will need to enter the username and password you used when you created your account, as follows:  
     `docker login`  
-Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to https://hub.docker.com to create one.  
+Login with your Docker ID to push and pull images from Docker Hub. If you don't have a Docker ID, head over to [Docker Hub](https://hub.docker.com) to create one.  
     `Username: <dockerhubusername>`  
     `Password: *****`  
 Login Succeeded
