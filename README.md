@@ -13,6 +13,7 @@ This site includes the slides and labs for the Docker Fundamentals class.
 ### Day 1 
 Lab 1: [Images](labs/images/)   
 Lab 2: [Networking](labs/networking/)   
+## Optional    
 Lab 3: [Optimizing Dockerfiles](labs/adv-dockerfile/)    
 
 ### Day 2   
