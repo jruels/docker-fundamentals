@@ -9,24 +9,17 @@ Lab Structure - Overview
 3.	Investigate Persistence in Volumes
 
 ### 1. Deploy WordPress Using Volumes
-Step by Step Guide
-1.	Locate the IP address of the Master machine in lab folder.
-
-2.	In a command line, enter  
-`ssh -i </Users/…/>docker.pem root@<IP>`  
-The .pem file will be provided by the instructor for this lab. This command will connect the console to the Docker machine.
-
-3.	Create the Database container using a volume:  
+1.	Create the Database container using a volume:  
 `docker run -d --name db --volume mysql-db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=password -e MYSQL_DATABASE=wordpress -e MYSQL_USER=wordpress -e MYSQL_PASSWORD=password mysql:5.7`
 
-4.	Inspect the mounts (Are these mounts bind-mounts or docker managed mounts?)  
+2.	Inspect the mounts (Are these mounts bind-mounts or docker managed mounts?)  
 {% raw %}
 ```
 docker inspect -f {{.Mounts}} db
 ```
 {% endraw %}
   
-5.	List the Docker volumes:  
+3.	List the Docker volumes:  
 `docker volume ls`  
 Output:  
     ```
@@ -35,18 +28,18 @@ Output:
     ```
     Note the "mysql-db" volume name.
 
-6.	Inspect the volume metadata of the mysql-db volume:  
+4.	Inspect the volume metadata of the mysql-db volume:  
 `docker volume inspect mysql-db`  
 Note the mount point.
 
-7.	Deploy the WordPress container and link it to the container named db  
+5.	Deploy the WordPress container and link it to the container named db  
 `docker run -d --name app -e WORDPRESS_DB_HOST=db:3306 --link db:mysql -p 80:80 -e WORDPRESS_DB_USER=root -e WORDPRESS_DB_PASSWORD=password s5atrain/wordpress-cli:latest`
 
-8.	Gather the mapped port information:  
+6.	Gather the mapped port information:  
 `docker port $(docker ps -lq)`  
 Note the WordPress application container is bound to all interfaces on port 80.
 
-9.	From a browser, open `http://<Master_IP>` and configure WordPress with the following credentials. Log in to WordPress after.  
+7.	From a browser, open `http://<Master_IP>` and configure WordPress with the following credentials. Log in to WordPress after.  
 `user: root`  
 `password: root`  
 `email: me@me.com`  
@@ -57,12 +50,17 @@ Step by Step Guide
 `docker exec -i -t db bash`
 
 2.	Enter these commands in the following order:  
-`mysql -u wordpress -ppassword`  
-`show databases;`  
-`use wordpress;`  
-`show tables;`  
-`describe wp_users;`  
-`select display_name from wp_users;`  
+```sql
+mysql -u wordpress -ppassword  
+show databases;  
+use wordpress;  
+show tables;  
+describe wp_users;  
+```
+
+```sql
+sql select display_name from wp_users;
+```
 The CLI will display the following:  
     ```
     +--------------+
@@ -81,11 +79,14 @@ Type `exit` twice to get back to Docker host
 3.	Create a new user:  
 `docker exec app wp user create jeff jeff@me.com --role='author' --user_pass=password --allow-root`
 
-4.	ssh into the MySQL database and display the WordPress user list:  
+4.	Enter the MySQL database and display the WordPress user list:  
 `docker exec -i -t db bash`  
-`mysql -u wordpress -ppassword`  
-`use wordpress;`  
-`select display_name from wp_users;`  
+
+```sql
+mysql -u wordpress -ppassword
+use wordpress;
+select display_name from wp_users;
+```
 `exit`  
 `exit`  
 
