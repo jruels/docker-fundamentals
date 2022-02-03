@@ -183,16 +183,16 @@ docker ps
 
 ## Apply a Rolling Update to a Service
 
-In this part of the tutorial, you deploy a service based on the Redis 6.0.14 container image. Then you upgrade the service to use the Redis 6.2.6 container image using rolling updates.
+In this part of the tutorial, you deploy a service based on the Redis 5.0.10 container image. Then you upgrade the service to use the Redis  6.0.9 container image using rolling updates.
 
-Deploy Redis 6.0.14 to the swarm and configure the swarm with a 10 second update delay:
+Deploy Redis 5.0.10 to the swarm and configure the swarm with a 10 second update delay:
 
 ```bash
 docker service create \
  --replicas 3 \
  --name redis \
  --update-delay 10s \
- redis:6.0.14
+ redis:5.0.10
 ```
 
     rpgpsddazage2d6zp2vkk3t4w
@@ -235,14 +235,14 @@ docker service inspect --pretty redis
      Max failure ratio: 0
      Rollback order:    stop-first
     ContainerSpec:
-     Image:		redis:6.0.14@sha256:6a692a76c2081888b589e26e6ec835743119fe453d67ecf03df7de5b73d69842
+     Image:		redis:5.0.10@sha256:6a692a76c2081888b589e26e6ec835743119fe453d67ecf03df7de5b73d69842
     Resources:
     Endpoint Mode:	vip
 
 Now you can update the container image for redis. The swarm manager applies the update to nodes according to the UpdateConfig policy:
 
 ```bash
-docker service update --image redis:6.2.6 redis
+docker service update --image redis:6.0.9 redis
 ```
 
     redis
@@ -291,7 +291,7 @@ docker service inspect --pretty redis
      Max failure ratio: 0
      Rollback order:    stop-first
     ContainerSpec:
-     Image:		redis:6.2.6@sha256:730b765df9fe96af414da64a2b67f3a5f70b8fd13a31e5096fee4807ed802e20
+     Image:		redis:6.0.9@sha256:730b765df9fe96af414da64a2b67f3a5f70b8fd13a31e5096fee4807ed802e20
     Resources:
     Endpoint Mode:	vip
 
@@ -383,7 +383,7 @@ docker service ps redis
     rs5rfnuoutf3         \_ redis.3         redis:4             lab2                Shutdown            Shutdown 2 minutes ago
 
 
-Run docker node update --availability drain <NODE-ID> to drain a node
+Run docker node update --availability drain <NODE-ID> to drain a node. Remember to replace `lab2` with the name or ID of your node.
 
 ```bash
 docker node update --availability drain lab2
