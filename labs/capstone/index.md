@@ -1,4 +1,3 @@
-# LAB
 ## Capstone
 *Lab Objectives*  
 This lab is designed to test your knowledge of Docker gained from this course. By the end of the lab, you will have a working installation of Docker on your personal machine and a basic understanding of how to deploy applications locally, push and pull image repositories to Docker Hub, and build images using the methods described in the earlier labs.
@@ -18,7 +17,7 @@ Lab Structure - Overview
 
     [Windows](https://hub.docker.com/editions/community/docker-ce-desktop-windows)
 
-    [Linux](https://docs.docker.com/install/)
+    [Linux](https://docs.docker.com/engine/install/#server)
 
 
 2.	Before moving on to the next section, you should have a working installation of Docker.
@@ -29,11 +28,7 @@ Lab Structure - Overview
 
 2.	Pull an Image from your personal Docker Hub account to your local machine.
 
-3.	Deploy cAdvisor locally.
-
-4.	Deploy Portainer locally.
-
-5.	Create a network bridge called Applications.
+3.	Create a network bridge called Applications.
 
 ### 3. Deploy WordPress-as-a-Service
 
@@ -64,7 +59,7 @@ Lab Structure - Overview
     6. Set wordpress service to use dynamic host ports for 80 and 443
 
 ### 5. Build a Dev Image Using a Dockerfile
-1.	Build a development image from ubuntu:18.04 using a Dockerfile with the following configuration (no specific order required for installing packages):
+1.	Build a development image from ubuntu:20.04 using a Dockerfile with the following configuration (no specific order required for installing packages):
 
     1.	Install packages:  
     `mercurial`  
@@ -89,8 +84,3 @@ Lab Structure - Overview
 
 ### Lab Complete!
 
-<!-- 
-LastTested: 2018-09-28
-OS: Ubuntu 18.04
-DockerVersion: 18.06.1-ce, build e68fc7a
--->
