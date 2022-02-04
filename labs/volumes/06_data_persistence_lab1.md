@@ -1,4 +1,3 @@
-# LAB
 ## Data Persistence Part 1
 *Lab Objectives*  
 This lab demonstrates how to create volumes. The goal is to show how a volume can allow data to persist across Docker containers by deploying two containers using the same volume definitions.

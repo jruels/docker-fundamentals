@@ -1,4 +1,3 @@
-# LAB
 ## Docker Compose
 *Lab Objectives*  
 This lab demonstrates how to use the Docker Compose feature. There are three examples that build towards an understanding of how to implement several containers using a docker-compose file to manage the deployment.  

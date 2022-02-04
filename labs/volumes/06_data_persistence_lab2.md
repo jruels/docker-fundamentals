@@ -1,4 +1,3 @@
-# LAB
 ## Data Persistence Part 2
 *Lab Objectives*  
 This lab demonstrates how to deploy the WordPress application using volumes to see how the data persists even if the containers are stopped or removed as long as the volume mounting point remains consistent. Students will also ssh into the MySQL database to validate that data is persistent across container builds.
