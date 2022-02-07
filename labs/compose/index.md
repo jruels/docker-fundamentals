@@ -99,7 +99,7 @@ Delete the comment marks from in front of the MySQL service by moving the cursor
 
 6.	Enter  
 `docker compose up -d`  
-The output will show the WordPress container starting up, and the new MySQL container being created.
+The output will show the WordPress container starting up, and the new mariadb container being created.
     ```
     Starting example2_wordpress_1
     Creating example2_mysql_1
