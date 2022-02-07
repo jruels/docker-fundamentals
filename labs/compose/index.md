@@ -95,7 +95,7 @@ If you don't see the expected install page, review the status and the logs of th
 
 5.	Back in the console window, enter  
 `vim docker compose.yml`
-Delete the comment marks from in front of the MySQL container by moving the cursor down and using the `x` key to delete each `#` character. After deleting the comment marks, save and exit vim via `esc` `:wq`
+Delete the comment marks from in front of the MySQL service by moving the cursor down and using the `x` key to delete each `#` character. After deleting the comment marks, save and exit vim via `esc` `:wq`
 
 6.	Enter  
 `docker compose up -d`  
@@ -136,7 +136,7 @@ Take a few moments to answer the following questions to yourself:
 
     - Identify the volumes that are being created.
     - What is the driver for the mariadb data volume?
-    - There are two services: mariadb and wordpress. Which one will be instantiated first?
+    - There are two services: mysql and wordpress. Which one will be instantiated first?
 
     If you are having trouble answering these questions, ask the instructor for help.
 
@@ -152,6 +152,9 @@ This may take a few minutes to pull the full WordPress deployment.
 6.	Navigate to {% raw %}`http://<MASTER_IP:8080>`{% endraw %} in the web browser.  
 
 7.	Install Wordpress
+
+8. Clean up environment 
+`docker compose down`
 
 Notice how much more efficient it is to use `docker compose` to start up an application consisting of multiple containers.
 

@@ -34,11 +34,11 @@ The machine will output the following code:
 
 5.	Enter the following commands:  
 ```sql
-sql create keyspace volume_persistence_lab with replication = {'class' : 'SimpleStrategy', 'replication_factor': 1};
+create keyspace volume_persistence_lab with replication = {'class' : 'SimpleStrategy', 'replication_factor': 1};
 ```
 6.	Enter the following commands again:  
 ```sql
- select * from system.schema_keyspaces where keyspace_name = 'volume_persistence_lab';
+select * from system.schema_keyspaces where keyspace_name = 'volume_persistence_lab';
 ```
 The machine will output the following code:  
     ```

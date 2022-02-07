@@ -58,7 +58,7 @@ describe wp_users;
 ```
 
 ```sql
-sql select display_name from wp_users;
+select display_name from wp_users;
 ```
 The CLI will display the following:  
     ```
