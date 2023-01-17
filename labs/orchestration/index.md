@@ -512,9 +512,9 @@ You can use this command to add a port for an existing service: `docker service 
 View a service's published ports:
 
 
-{ %raw }
+{% raw %}
 docker service inspect --format="{{json .Endpoint.Spec.Ports}}" my-web
-{ %endraw }
+{% endraw %}
 
 
 ```json
