@@ -122,19 +122,7 @@ Login Succeeded
 5.	Deploy a container from the newly created image, this container will create a read/write layer above the previous layer which carries the installed WordPress CLI.  
     `docker run -d -P --name wpaio2 <dockerhubusername>/wordpress-cli:aio-manual  `
 
-6.	Run the following to get the dynamic port mapping of the newly deployed container.   
-    `docker port wpaio2`  
-Two ports will be listed:  
-3306/tcp -> 0.0.0.0:32769  
-80/tcp -> 0.0.0.0:32770
-
-7.	In a web browser, navigate to http://`<IP_Address>`:port using the local host IP address of your machine and the port mapped to 80/tcp from the previous step (i.e. 32770).
-
-8.	Configure WordPress again with the same credentials as before:  
-    `Username: root`  
-    `Password: root`  
-
-9.	Test the install again with the same execute command as before:  
+6.	Test the install again with the same execute command as before:  
     `docker exec wpaio2 wp theme list --allow-root --path='/var/www/html'`  
 The output should remain the same:  
     ```
@@ -148,7 +136,7 @@ The output should remain the same:
     ```
 This validates that the WordPress CLI is already installed on the image. The image wordpress-cli:aio-manual was created from the read/write layer of the previous container wpaio; which, had the WordPress CLI installed on it. 
 
-10.	Return to view your Docker Hub account in a web browser. Find the repository for the image you pushed, and view the information you can now edit. What statistics is Docker Hub reporting for the repository?
+7.	Return to view your Docker Hub account in a web browser. Find the repository for the image you pushed, and view the information you can now edit. What statistics is Docker Hub reporting for the repository?
 
 ### Lab Complete!
 

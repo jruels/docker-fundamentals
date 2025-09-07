@@ -3,8 +3,8 @@
 This site includes the slides and labs for the Docker Fundamentals class.
 
 ## Course Content   
-[Slides Day 1](https://www.dropbox.com/s/dbytx98113xozax/Docker-day1.pdf?dl=0)     
-[Slides Day 2](https://www.dropbox.com/s/g8n4du8z7pf7obz/Docker-day2.pdf?dl=0)     
+[Slides Day 1](https://www.dropbox.com/s/4erfa8vc6hpxk9w/Docker-day1.pdf?dl=0)   
+[Slides Day 2](https://www.dropbox.com/s/o8wndexwezd5hdk/Docker-day2.pdf?dl=0)     
 
 ## Labs
 [Lab VMs](https://docs.google.com/spreadsheets/d/1FF7sCF8mfCMzLvGyXrnd3xI1NujLOsSdXwwu4Ruo4QY/edit?usp=sharing)   

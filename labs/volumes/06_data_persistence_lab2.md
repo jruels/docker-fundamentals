@@ -45,7 +45,7 @@ Note the WordPress application container is bound to all interfaces on port 80.
 
 ### 2. Create a New User
 Step by Step Guide
-1.	In the command line, docker-ssh into the MySQL database:  
+1.	In the command line, execute into the MySQL database:  
 `docker exec -i -t db bash`
 
 2.	Enter these commands in the following order:  

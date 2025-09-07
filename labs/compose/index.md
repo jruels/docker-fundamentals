@@ -94,7 +94,7 @@ Take note of the port that is listed for the WordPress container (8080).
 If you don't see the expected install page, review the status and the logs of the WordPress container. Is there an evident problem?  
 
 5.	Back in the console window, enter  
-`vim docker compose.yml`
+`vim docker-compose.yml`
 Delete the comment marks from in front of the MySQL service by moving the cursor down and using the `x` key to delete each `#` character. After deleting the comment marks, save and exit vim via `esc` `:wq`
 
 6.	Enter  
